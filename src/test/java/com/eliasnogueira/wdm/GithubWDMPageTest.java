@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class GithubWDMPageTest {
 
@@ -17,7 +18,11 @@ public class GithubWDMPageTest {
     @BeforeAll
     static void webdrivermanagerSetup() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+
+        ChromeOptions options = new ChromeOptions();
+        options.setHeadless(true);
+
+        driver = new ChromeDriver(options);
 
         driver.get("https://github.com/bonigarcia/webdrivermanager");
     }
