@@ -1,4 +1,4 @@
-image: selenium/standalone-chrome:latest
+image: markhobson/maven-chrome
 
 stages:
   - build
