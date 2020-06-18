@@ -1,6 +1,8 @@
 # WebDriverManager GitLab Pipeline
 This project shows how to run an automated web test inside a docker container using the GitLab CI.
 
+> This README explanation belongs to the gitlab-registry branch
+
 ## Tech stack
 * Java 11
 * [WebDriverManager](https://github.com/bonigarcia/webdrivermanager) is being used to, automatically, manage the browser driver
@@ -18,7 +20,8 @@ most important part: how we can execute it into a container inside the GitLab CI
 
 ## Pipeline script
 At the beginning of the `.gitlab-ci.yml` there is a docker container that already has Java 11, Maven, and Google Chrome 
-browser. The image is from [markhobson/maven-chrome/](https://hub.docker.com/r/markhobson/maven-chrome/) project.
+browser. This is a custom docker image created by the `Docekrfile` and pushed to the GitLab container registry.
+Note that the first line uses the following docker image: `registry.gitlab.com/elias.nogueira/webdrivermanager-pipeline-test`.
 
 There are two stages in this pipeline, to make it simple and show to you how to execute the tests:
 * build: compile the and download the necessary libraries
