@@ -23,3 +23,6 @@ browser. The image is from [markhobson/maven-chrome/](https://hub.docker.com/r/m
 There are two stages in this pipeline, to make it simple and show to you how to execute the tests:
 * build: compile the and download the necessary libraries
 * test: run the test we have
+
+To see an example where you can create your custom Docker image, push into the GitLab container registry and use it 
+in the pipeline script, switch to the [gitlab-registry](https://gitlab.com/elias.nogueira/webdrivermanager-pipeline-test/-/tree/gitlab-registry) branch.
