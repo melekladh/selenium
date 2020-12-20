@@ -1,7 +1,5 @@
 package com.eliasnogueira.wdm;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import com.eliasnogueira.wdm.po.GitHubPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
@@ -11,7 +9,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class GithubWDMPageTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class GithubWDMPageTest {
 
     private static WebDriver driver;
 
