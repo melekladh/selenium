@@ -7,14 +7,18 @@ import org.openqa.selenium.support.PageFactory;
 
 public class GitHubPage {
 
-    @FindBy(css = "[itemprop='about']")
-    private WebElement description;
+    @FindBy(css = "[itemprop='name'] > a")
+    private WebElement projectLink;
 
     public GitHubPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    public String getDescription() {
-        return description.getText();
+    public String getProjectReferenceLink() {
+        return projectLink.getAttribute("href");
+    }
+
+    public String getProjectText() {
+        return projectLink.getText();
     }
 }
