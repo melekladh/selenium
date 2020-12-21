@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GithubWDMPageTest {
 
     private static WebDriver driver;
+    private static final String URL = "https://github.com/bonigarcia/webdrivermanager";
 
     @BeforeAll
     static void webdrivermanagerSetup() {
@@ -24,7 +25,7 @@ class GithubWDMPageTest {
 
         driver = new ChromeDriver(options);
 
-        driver.get("https://github.com/bonigarcia/webdrivermanager");
+        driver.get(URL);
     }
 
     @AfterAll
@@ -35,8 +36,8 @@ class GithubWDMPageTest {
     @Test
     void checkDescription() {
         GitHubPage page = new GitHubPage(driver);
-        String expected = "Automatic management of Selenium WebDriver binaries";
 
-        assertEquals(expected, page.getDescription());
+        assertEquals("webdrivermanager", page.getProjectText());
+        assertEquals(URL, page.getProjectReferenceLink());
     }
 }
